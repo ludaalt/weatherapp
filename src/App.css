@@ -1,0 +1,61 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.App {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background-image: url('./assets/cloud.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  color: #fff;
+  font-family: 'Montserrat', sans-serif;
+  
+}
+
+.App::after {
+  content: '';
+  display: block;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  background-image: linear-gradient(to top, rgba(26,40,120,0.30), rgba(10,143,196,0.30));
+}
+
+.wrapper {
+  z-index: 10000;
+  width: 90%;
+  height: 80vh;
+  border: 2px solid yellow;
+  /*display: flex;
+  align-items: center;
+  justify-content: center;*/
+}
+
+button {
+  cursor: pointer;
+  border-radius: 5px;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.08);
+  color: #fff;
+  
+  font-size: 14px;
+  padding: 10px 20px;
+  
+  background-color: rgb(107, 173, 226);
+  border: 1px solid rgb(86, 163, 226);
+}
+
+button:hover {
+  border-color: rgba(82, 168, 236, 0.8);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(82, 168, 236, 0.6);
+}
