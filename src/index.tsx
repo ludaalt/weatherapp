@@ -15,10 +15,17 @@ const GlobalStyle = createGlobalStyle`
     list-style: none;
   }
 
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+
   button {
     cursor: pointer;
-    border: none;
-    background: none;
     font: inherit;
   }
 `;
