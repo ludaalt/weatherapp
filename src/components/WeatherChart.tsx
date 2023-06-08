@@ -1,13 +1,17 @@
 import Chart from "react-apexcharts";
 
-import WeatherData from "../store/weatherData";
+type ChartProps = {
+  data: Array<number>;
+  categories: Array<string>;
+};
 
-const ApexChart = () => {
+const ApexChart = ({ data, categories }: ChartProps) => {
+  console.log(data);
   const forecastData = {
     series: [
       {
         name: "Celsius",
-        data: WeatherData.currentCity.arrData,
+        data: data,
       },
     ],
     options: {
@@ -26,11 +30,16 @@ const ApexChart = () => {
       title: {
         text: "Weather Forecast",
         align: "center",
+
+        style: {
+          fontSize: "30px",
+          color: "#fff",
+        },
       },
 
       xaxis: {
         type: "datetime",
-        categories: WeatherData.currentCity.arrLabels,
+        categories: categories,
       },
 
       tooltip: {
