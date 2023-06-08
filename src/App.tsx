@@ -1,29 +1,24 @@
-import React from 'react';
-import { Route, BrowserRouter, Switch } from 'react-router-dom';
-import { observer } from 'mobx-react-lite'
+import React from "react";
+import { Route, BrowserRouter, Switch } from "react-router-dom";
+import { observer } from "mobx-react-lite";
 
-import SearchComponent from './components/SearchComponent';
-import WeatherBlock from './components/WeatherBlock';
-import RequestsHistory from './components/RequestsHistory';
+import SearchComponent from "./components/SearchComponent";
+import WeatherBlock from "./components/WeatherBlock";
+import RequestsHistory from "./components/RequestsHistory";
 
-import './App.css';
+import "./App.css";
 
-const App: React.FC = observer((props) => {
-
+const App: React.FC = observer(() => {
   return (
     <BrowserRouter>
       <div className="App">
-        <div className="wrapper"> 
+        <Switch>
+          <Route exact path="/" component={SearchComponent} />
+          <Route exact path="/more" component={SearchComponent} />
+          <Route exact path="/weather" component={WeatherBlock} />
 
-          <Switch> 
-            <Route exact path='/' component={ SearchComponent } />       
-            <Route exact path='/more' component={ SearchComponent } />
-            <Route exact path='/weather' component={ WeatherBlock } />
-
-            <Route exact path="/requests" component={ RequestsHistory } /> 
-          </Switch>
-
-        </div>              
+          <Route exact path="/requests" component={RequestsHistory} />
+        </Switch>
       </div>
     </BrowserRouter>
   );
