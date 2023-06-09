@@ -1,5 +1,5 @@
 import React from "react";
-import { Route, BrowserRouter } from "react-router-dom";
+import { Route, BrowserRouter, Routes } from "react-router-dom";
 import { observer } from "mobx-react-lite";
 
 import SearchComponent from "./components/SearchComponent";
@@ -12,11 +12,13 @@ const App: React.FC = observer(() => {
   return (
     <BrowserRouter>
       <div className="App">
-        <Route exact path="/" component={SearchComponent} />
-        <Route exact path="/more" component={SearchComponent} />
-        <Route exact path="/weather" component={WeatherBlock} />
+        <Routes>
+          <Route path="/" element={<SearchComponent />} />
+          <Route path="/more" element={<SearchComponent />} />
+          <Route path="/weather" element={<WeatherBlock />} />
 
-        <Route exact path="/requests" component={RequestsHistory} />
+          <Route path="/requests" element={<RequestsHistory />} />
+        </Routes>
       </div>
     </BrowserRouter>
   );
