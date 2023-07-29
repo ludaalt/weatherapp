@@ -52,7 +52,7 @@ class WeatherData {
       );
 
     fetch(
-      `http://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=87f5d13b44c8132c840c1ae0241f180c`
+      `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=87f5d13b44c8132c840c1ae0241f180c`
     )
       .then((response) => {
         if (response) return response.json();
