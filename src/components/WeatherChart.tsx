@@ -6,7 +6,6 @@ type ChartProps = {
 };
 
 const ApexChart = ({ data, categories }: ChartProps) => {
-  console.log(data);
   const forecastData = {
     series: [
       {
